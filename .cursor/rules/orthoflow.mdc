@@ -1,0 +1,20 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Local Data Handling:
+  Use local mock data for components until a backend server is implemented.
+  Consider using json-server for simulating backend API calls during development.
+User Role Management:
+  Implement role-based routing to separate interfaces for patients and orthopedists.
+  Ensure that the orthopedist interface has access to additional pages and advanced analytics features.
+Responsive Design:
+  Design the application to be mobile-first for patients, ensuring optimal usability on mobile devices.
+  Create an adapted web version for orthopedists, focusing on a desktop-friendly layout and functionality.
+Component Structure:
+  Organize components to accommodate both mobile and web interfaces, possibly using conditional rendering or separate components for each platform.
+  Ensure that shared components are reusable and maintainable across both interfaces.
+Performance Optimization:
+
+  Optimize the application for performance on both mobile and web platforms, considering the different capabilities of devices used by patients and orthopedists

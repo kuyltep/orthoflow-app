@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@orthoflow.com",
+      "password": "password123",
+      "role": "doctor"
+    },
+    {
+      "id": 2,
+      "name": "Patient One",
+      "email": "patient@orthoflow.com",
+      "password": "password123",
+      "role": "patient"
+    }
+  ]
+} 
