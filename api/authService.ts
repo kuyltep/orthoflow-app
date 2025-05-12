@@ -5,9 +5,9 @@ import { Platform } from 'react-native';
 // Get the appropriate API URL based on the platform
 // For web - use localhost
 // For mobile - use the development machine's IP address (from Expo)
-const getApiUrl = () => {
+export const getApiUrl = () => {
   if (Platform.OS === 'web') {
-    return 'http://localhost:3000';
+    return 'http://localhost:3500';
   }
   
   // For mobile devices in development
