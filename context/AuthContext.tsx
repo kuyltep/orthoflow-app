@@ -6,6 +6,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 
 import { User, loginUser, registerUser } from '@/api/authService';
 
+
 // Auth context interface
 interface AuthContextType {
   user: User | null;
@@ -75,9 +76,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Login function
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
-      console.log(`Attempting login for email: ${email}`);
       const result = await loginMutation.mutateAsync({ email, password });
-      console.log('Login result:', result ? 'Success' : 'Failed');
       return !!result;
     } catch (error) {
       console.error('Login failed:', error);
