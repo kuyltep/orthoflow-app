@@ -7,21 +7,18 @@ import { Image } from 'expo-image'; // Using expo-image for SVGs
 // Removed PressureZone and FootData interfaces
 // Removed InsoleSVG component and insolePathData constant
 
-const leftFootImage = require('@/assets/images/left-foot.svg');
-const rightFootImage = require('@/assets/images/right-foot.svg');
-
+const footsImage = require('@/assets/images/foots.svg');
 export function FootPressureDisplay() {
   const { theme } = useAppTheme();
   const { width } = useWindowDimensions();
   // Removed footData, isLoading, error states and useEffect
 
-  const isWeb = Platform.OS === 'web';
-  const containerContentWidth = width * (isWeb ? 0.5 : 0.8);
+  const containerContentWidth = width * 0.7;
   
   // Assuming the SVGs have an aspect ratio similar to the previous path data for now.
   // This might need adjustment based on the actual SVG dimensions.
-  const footAspectRatio = 2.5; // Example: height is 2.5 times width
-  const footWidth = containerContentWidth * 0.6; // Each foot takes about 40% of the content width
+  const footAspectRatio = 0.7; // Example: height is 2.5 times width
+  const footWidth = containerContentWidth; // Each foot takes about 40% of the content width
   const footHeight = footWidth * footAspectRatio;
 
   const legendCircleSize = Math.max(12, containerContentWidth * 0.045);
@@ -34,15 +31,11 @@ export function FootPressureDisplay() {
     <View style={[styles.container, { backgroundColor: theme.secondaryBackground, borderColor: theme.primary }]}>
       <View style={[styles.feetContainer, { width: containerContentWidth }]}>
         <Image 
-          source={leftFootImage} 
+          source={footsImage} 
           style={{ width: footWidth, height: footHeight }}
           contentFit="contain" // Ensures the SVG scales correctly within bounds
         />
-        <Image 
-          source={rightFootImage} 
-          style={{ width: footWidth, height: footHeight }}
-          contentFit="contain"
-        />
+        
       </View>
       <Text style={[styles.title, { color: theme.text }]}>Уровень нагрузки</Text>
 
@@ -62,7 +55,7 @@ const styles = StyleSheet.create({
   container: {
     alignSelf: 'center',
     width: '95%',
-    maxWidth: 1000,
+    maxWidth: 1024,
     padding: Platform.select({web: 25, default: 15}),
     borderRadius: 15,
     borderWidth: 3,
@@ -78,10 +71,7 @@ const styles = StyleSheet.create({
     marginTop: Platform.select({web: 10, default: 5}), // Keep title below feet
   },
   feetContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
     alignItems: 'center',
-    marginBottom: Platform.select({web: 25, default: 20}),
   },
   // Removed footSvg style as it's not directly applicable to expo-image in this way
   legendContainer: {

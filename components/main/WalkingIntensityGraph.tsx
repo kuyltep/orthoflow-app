@@ -127,14 +127,13 @@ export function WalkingIntensityGraph() {
 const styles = StyleSheet.create({
   container: {
     alignSelf: 'center',
-    width: '95%', // Fallback, actual width set by containerWidth
+    width: '100%', // Fallback, actual width set by containerWidth
     maxWidth: 1024, // Max width for the entire component
     padding: 10,
     borderRadius: 15,
     borderWidth: 3,
     alignItems: 'center',
     marginBottom: 20,
-    marginHorizontal: 'auto',
   },
   centeredStatus: {
     justifyContent: 'center',
