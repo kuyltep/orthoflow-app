@@ -1,16 +1,20 @@
 {
   "expo": {
-    "name": "orthoflow-app",
+    "name": "Orthoflow",
     "slug": "orthoflow",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "orthoflowapp",
+    "platforms": ["ios", "android", "web"],
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.orthoflow.app"
+      "bundleIdentifier": "com.orthoflow.app",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
