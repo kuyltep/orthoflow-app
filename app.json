@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "orthoflow-app",
-    "slug": "orthoflow-app",
+    "slug": "orthoflow",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -14,8 +14,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#FFFFFF"
       },
       "package": "com.orthoflow.app",
       "edgeToEdgeEnabled": true
@@ -23,7 +23,7 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/icon.png"
     },
     "plugins": [
       "expo-router",
@@ -35,10 +35,23 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],
+      [
+        "expo-web-browser",
+        {
+          "usesCleartextTraffic": true
+        }
       ]
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "8dbe43b1-ea91-4183-84fa-5019f2cbb2e4"
+      }
+    },
+    "owner": "kyultep"
   }
 }

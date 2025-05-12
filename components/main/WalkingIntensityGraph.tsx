@@ -46,7 +46,7 @@ export function WalkingIntensityGraph() {
   const chartDisplayData = chartDataResponse; // Use a different variable name to avoid conflict with gifted-charts own 'data' prop context
 
   const isWeb = Platform.OS === 'web';
-  const containerWidth = Math.min(isWeb ? Math.min(screenWidth * 0.9, 950) : screenWidth * 0.85, 950);
+  const containerWidth = Math.min(isWeb ? Math.min(screenWidth * 0.85, 950) : screenWidth * 0.85, 950);
   const chartHeight = isWeb ? 230 : 200;
   // The chart width will be mostly managed by the BarChart component based on its content and parent container
   // We ensure the parent container (styles.container) has the correct overall width and maxWidth.
@@ -79,7 +79,7 @@ export function WalkingIntensityGraph() {
       <View style={styles.chartContentWrapper}> 
         <BarChart
           data={barData}
-          width={containerWidth * 0.8} // Chart takes a percentage of the container width
+          width={containerWidth * 0.9} // Chart takes a percentage of the container width
           height={chartHeight}
           maxValue={yAxisMax}
           noOfSections={3} // Creates 3 segments, leading to 4 lines (0, 25, 50, 75)
@@ -98,7 +98,7 @@ export function WalkingIntensityGraph() {
           barWidth={Platform.select({web: 20, default: 18})} // Adjust bar width for compactness
           spacing={Platform.select({web: 15, default: 10})} // Adjust spacing for compactness
           barBorderRadius={5} // For rounded tops, if capRadius is not sufficient or for full radius
-          
+
           isAnimated
           backgroundColor={theme.secondaryBackground} // Ensure chart bg matches container
         />
@@ -149,6 +149,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center', // Center the BarChart component itself
     marginBottom: 10,
+    overflow: "hidden"
   },
   xAxisLabelStyle: {
     marginTop: 10,
