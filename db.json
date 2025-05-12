@@ -1,18 +1,50 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Admin User",
-      "email": "admin@orthoflow.com",
-      "password": "password123",
+      "id": "1",
+      "email": "doctor@example.com",
+      "password": "password",
+      "name": "Dr. Ortho",
       "role": "doctor"
     },
     {
-      "id": 2,
-      "name": "Patient One",
-      "email": "patient@orthoflow.com",
-      "password": "password123",
+      "id": "2",
+      "email": "patient@example.com",
+      "password": "password",
+      "name": "Pat Nient",
       "role": "patient"
     }
-  ]
+  ],
+  "footPressureData": {
+    "leftFoot": [
+      { "id": "L1", "zoneName": "Heel", "pressureLevel": 3 },
+      { "id": "L2", "zoneName": "Midfoot Lateral", "pressureLevel": 1 },
+      { "id": "L3", "zoneName": "Midfoot Medial", "pressureLevel": 2 },
+      { "id": "L4", "zoneName": "Forefoot Lateral", "pressureLevel": 4 },
+      { "id": "L5", "zoneName": "Toes & Medial Forefoot", "pressureLevel": 5 }
+    ],
+    "rightFoot": [
+      { "id": "R1", "zoneName": "Heel", "pressureLevel": 2 },
+      { "id": "R2", "zoneName": "Midfoot Lateral", "pressureLevel": 1 },
+      { "id": "R3", "zoneName": "Midfoot Medial", "pressureLevel": 3 },
+      { "id": "R4", "zoneName": "Forefoot Lateral", "pressureLevel": 5 },
+      { "id": "R5", "zoneName": "Toes & Medial Forefoot", "pressureLevel": 4 }
+    ]
+  },
+  "walkingIntensityChart": {
+    "title": "Интенсивность ходьбы",
+    "xAxisLabel": "Время (ч)",
+    "yAxisConfig": {
+      "labels": ["Низк.", "Сред.", "Выс."],
+      "segments": 3
+    },
+    "dataPoints": [
+      { "time": "9", "value": 25 },
+      { "time": "11", "value": 10 },
+      { "time": "13", "value": 45 },
+      { "time": "15", "value": 60, "isPeak": true },
+      { "time": "17", "value": 20 },
+      { "time": "19", "value": 8 }
+    ]
+  }
 } 
